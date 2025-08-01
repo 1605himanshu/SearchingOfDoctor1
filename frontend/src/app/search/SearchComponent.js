@@ -34,7 +34,7 @@ export default function SearchComponent() {
 
   return (
     <div className="  min-h-screen bg-white flex justify-center items-center px-4">
-      <div className="w-full max-w-[600px] space-y-6 ">
+      <div className="mb-60 w-full max-w-[400px] space-y-8 ">
         {loading && <p className="text-gray-500 text-center">Loading doctors...</p>}
         {!loading && doctors.length === 0 && <p className="text-gray-500 text-center">No doctors found.</p>}
         {!loading &&
