@@ -18,7 +18,7 @@ export default function SearchComponent() {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/doctors?location=${encodeURIComponent(location)}&profession=${encodeURIComponent(profession)}`
+          `https://searchingofdoctor1.onrender.com/api/doctors?location=${encodeURIComponent(location)}&profession=${encodeURIComponent(profession)}`
         );
         const data = await response.json();
         setDoctors(data);
