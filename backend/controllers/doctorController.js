@@ -1,20 +1,22 @@
+// doctorController.js
 const Doctor = require('../models/Doctor');
 
 const getDoctors = async (req, res) => {
   try {
-    const { location, specialty, name } = req.query;
-    const query = {};
+    const { location, profession } = req.query;
 
+    const query = {};
     if (location) query.location = new RegExp(location, 'i');
-    if (specialty) query.profession = new RegExp(specialty, 'i'); // assuming 'profession' in DB
-    if (name) query.name = new RegExp(name, 'i'); // <--- ADD THIS LINE
+    if (profession) query.profession = new RegExp(profession, 'i');
+
+    console.log('Query received:', query);
 
     const doctors = await Doctor.find(query);
     res.json(doctors);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ error: 'Server Error' });
   }
 };
-
 
 module.exports = { getDoctors };

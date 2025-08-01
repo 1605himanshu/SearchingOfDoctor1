@@ -9,7 +9,7 @@ export default function SearchBar() {
 
   const handleSearch = () => {
     if (query.trim()) {
-      router.push(`/search?location=${location}&specialty=${query}`);
+      router.push(`/search?location=${location}&profession=${query}`);
     }
   };
 
